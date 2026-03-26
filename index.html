@@ -785,4 +785,62 @@
         </div>
 
         <!-- Step 3: Special Requirements (hidden) -->
-        <div
+        <div id="book-step3" class="booking-panel" style="display:none">
+          <h3>Special Requirements <span style="font-size:.78rem;color:var(--muted);font-weight:400">(optional)</span></h3>
+          <div class="form-row"><label>Dietary Requirements</label>
+            <select><option value="">None</option><option>Vegetarian</option><option>Vegan</option><option>Halal</option><option>Kosher</option><option>Gluten-free</option></select>
+          </div>
+          <div class="form-row"><label>Accessibility Needs</label>
+            <input type="text" placeholder="e.g. wheelchair access, mobility assistance…">
+          </div>
+          <div class="form-row"><label>Room Preference</label>
+            <select><option>No preference</option><option>King bed</option><option>Twin beds</option><option>Accessible room</option></select>
+          </div>
+          <div class="form-row"><label>Any other notes for the tour provider?</label>
+            <textarea placeholder="Let us know anything else we should be aware of…"></textarea>
+          </div>
+          <!-- Corporate group upload -->
+          <div style="background:var(--bg);border:1px dashed var(--border);border-radius:8px;padding:16px;margin-top:4px">
+            <p style="font-size:.82rem;color:var(--muted);margin-bottom:8px"><strong>Corporate Groups:</strong> Upload a list of traveller names to assign to this booking.</p>
+            <input type="file" accept=".csv,.xlsx" style="font-size:.82rem">
+          </div>
+          <div style="display:flex;gap:10px;margin-top:18px">
+            <button class="btn btn-outline" onclick="showBookStep(2)">← Back</button>
+            <button class="btn btn-teal" onclick="showBookStep(4)">Continue to Payment →</button>
+          </div>
+        </div>
+
+        <!-- Step 4: Payment (hidden) -->
+        <div id="book-step4" class="booking-panel" style="display:none">
+          <h3>Secure Payment <span style="font-size:.78rem;font-weight:400;color:var(--muted)">🔒 PCI-DSS Compliant</span></h3>
+          <div class="alert alert-info">Your payment is processed securely. Card details are never stored on our servers.</div>
+          <div class="form-row"><label>Name on Card</label><input type="text" placeholder="Name on Your Card"></div>
+          <div class="form-row"><label>Card Number</label><input type="text" placeholder="•••• •••• •••• ••••" maxlength="19"></div>
+          <div class="form-grid">
+            <div class="form-row"><label>Expiry</label><input type="text" placeholder="MM / YY"></div>
+            <div class="form-row"><label>CVV</label><input type="text" placeholder="•••" maxlength="4"></div>
+          </div>
+          <div class="payment-icons">
+            <div class="payment-icon">VISA</div>
+            <div class="payment-icon">MC</div>
+            <div class="payment-icon">AMEX</div>
+          </div>
+          <div style="display:flex;gap:10px;margin-top:18px">
+            <button class="btn btn-outline" onclick="showBookStep(3)">← Back</button>
+            <button class="btn btn-amber" onclick="go('confirm')">Pay $2,598 →</button>
+          </div>
+          <p style="font-size:.75rem;color:var(--muted);margin-top:10px">By completing this booking you agree to our Terms &amp; Cancellation Policy.</p>
+        </div>
+      </div>
+
+      <!-- Order summary sidebar -->
+      <div>
+        <div class="booking-panel" style="padding:20px">
+          <h3 style="font-size:1rem;margin-bottom:14px">Order Summary</h3>
+          <div style="display:flex;gap:10px;margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid var(--border)">
+            <div style="width:60px;height:50px;border-radius:6px;background:linear-gradient(135deg,#7ecac7,#4a9ea0);flex-shrink:0"></div>
+            <div><div style="font-size:.88rem;font-weight:600">Yala Island Escape</div><div style="font-size:.75rem;color:var(--muted)">7 Days · 15 April 2025</div></div>
+          </div>
+          <div class="order-row"><span>2 × Adults</span><span>$2,598</span></div>
+          <div class="order-row"><span>0 × Children</span><span>$0</span></div>
+          <div c
